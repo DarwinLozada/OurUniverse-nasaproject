@@ -9,11 +9,29 @@ module.exports = {
         HeadlineColor: "#320555",
         SpanHeadlineColor: "#AC43FF",
         SecondHeadlineColor: "#5C215E",
+        CallToActionColor: "#AD5389",
+        FooterColor: "#291737",
+        FooterLogoColor: "#170326",
+      },
+
+      height: {
+        "28rem": "28rem",
+      },
+
+      spacing: {
+        "36rem": "36rem",
+        "48rem": "48rem",
+      },
+
+      fontSize: {
+        xss: ".60rem",
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      ringWidth: ["hover", "focus"],
+    },
   },
   plugins: [],
 };
