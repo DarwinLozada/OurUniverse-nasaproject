@@ -57,7 +57,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center md:justify-between w-screen mt-96 items-center lg:mb-24">
+      <div className="flex flex-col lg:flex-row justify-center md:justify-between w-screen mt-80 lg:mt-96 items-center lg:mb-24">
         <div className="flex flex-col h-full w-screen lg:w-auto text-center justify-center lg:justify-start lg:text-left items-center lg:items-start mx-8 md:mb-16 lg:mb-0">
           <h2 className="text-SecondHeadlineColor font-bold md:max-w-lg lg:max-w-lg text-3xl md:text-4xl lg:text-5xl mx-2">
             Explore the most interesting and curious photos shared by the NASA
