@@ -102,7 +102,7 @@ export default function Home() {
               alt="Volcano Photograph"
               className="flex justify-center items-center"
             ></Image>
-            <button className="hidden md:block transition duration-200 md:absolute images-shadow right-0 left-0 bottom-1/2 mx-auto bg-opacity-80 text-white font-bold  bg-CallToActionColor px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
+            <button className="hidden md:block transition duration-200 focus:outline-none focus:ring-4 ring-bgGradientSecond md:absolute images-shadow right-0 left-0 bottom-1/2 mx-auto bg-opacity-80 text-white font-bold  bg-CallToActionColor px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
               <p className="text-2xl md:text-5xl opacity-100">
                 Join the experience!
               </p>
@@ -119,7 +119,7 @@ export default function Home() {
               </span>
             </p>
           </div>
-          <button className="md:hidden w-full bg-CallToActionColor text-white text-3xl font-semibold rounded py-8 images-shadow">
+          <button className="transition duration-200 md:hidden w-full hover:ring-2 focus:outline-none focus:ring-4 ring-bgGradientSecond bg-CallToActionColor text-white text-3xl font-semibold rounded py-8 images-shadow">
             Join the experience!
           </button>
         </div>
@@ -147,7 +147,6 @@ export default function Home() {
             }
             fillColor={"#654EA3"}
           />
-
           <TwitterIcon fillColor={"#654EA3"} styles="rounded-full w-12 h-12" />
         </div>
       </footer>
