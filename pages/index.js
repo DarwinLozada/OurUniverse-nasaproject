@@ -67,7 +67,7 @@ export default function Home() {
             explanation written by a professional astronomer{" "}
           </p>
         </div>
-        <div className="flex flex-col w-11/12 lg:w-7/12 images-shadow h-64 md:h-96 lg:h-28rem mt-12 md:mt-0">
+        <div className="flex flex-col w-11/12 lg:w-7/12 images-shadow h-64 md:h-28rem lg:h-28rem mt-12 md:mt-0">
           <div className="flex flex-col relative w-full h-full">
             <Image
               src="/imgs/landingImage1.jpg"
