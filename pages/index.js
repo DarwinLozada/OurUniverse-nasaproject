@@ -147,7 +147,6 @@ export default function Home() {
             }
             fillColor={"#654EA3"}
           />
-          <TwitterIcon fillColor={"#654EA3"} styles="rounded-full w-12 h-12" />
         </div>
       </footer>
     </div>
