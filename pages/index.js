@@ -16,11 +16,10 @@ export default function Home() {
   return (
     <div className="flex flex-col text-4xl bg-gradient-to-b min-h-screen from-bgGradientFirst to-bgGradientSecond overflow-hidden">
       <header className="flex w-full justify-between items-center mt-4">
-        <div>
+        <div className="relative w-44 sm:w-1/3 lg:w-72 h-16 md:h-24 ">
           <Image
             src="/imgs/OurUniverse Logo.png"
-            width="280"
-            height="95.25"
+            layout="fill"
             alt="OurUniverse Logo"
           />
         </div>
