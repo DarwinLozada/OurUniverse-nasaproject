@@ -3,6 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { GithubIcon, TwitterIcon } from "./SvgComponents";
+import PageIntro from "../components/PageIntro";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [apodData, setApodData] = useState(false);
@@ -12,6 +14,23 @@ export default function Home() {
   //   () => fetchTodayApod().then((response) => setApodData(response)),
   //   []
   // );
+
+  const rocketVariants = {
+    hidden: {
+      opacity: 0.2,
+      x: -1000,
+    },
+    visible: {
+      opacity: 1,
+      x: "50%",
+    },
+  };
+
+  const planetVariants = {
+    moving: {
+      x: 10,
+    },
+  };
 
   return (
     <div className="flex flex-col text-4xl bg-gradient-to-b min-h-screen from-bgGradientFirst to-bgGradientSecond overflow-hidden">
@@ -45,16 +64,30 @@ export default function Home() {
         </h1>
       </div>
       <div className="relative lg:mb-24">
-        <div className="absolute -top-4 -left-24 w-72 h-64 md:w-9/12 lg:w-6/12 md:h-36rem">
+        <motion.div
+          className="absolute -top-4 -left-24 w-72 h-64 md:w-9/12 lg:w-6/12 md:h-36rem"
+          initial="hidden"
+          animate="visible"
+          variants={rocketVariants}
+          transition={{
+            ease: "easeOut",
+            duration: 4,
+            type: "tween",
+          }}
+        >
           <Image src={"/imgs/Rocket.png"} alt="Rocket" layout="fill" />
-        </div>
-        <div className="absolute -right-36 sm:-right-52 -top-40 w-60 h-60 md:w-80 md:h-80 opacity-50 md:-right-32 md:opacity-75 lg:w-96 lg:h-96 lg:opacity-90">
+        </motion.div>
+        <motion.div
+          className="absolute -right-36 sm:-right-52 -top-40 w-60 h-60 md:w-80 md:h-80 opacity-50 md:-right-32 md:opacity-75 lg:w-96 lg:h-96 lg:opacity-90"
+          animate="moving"
+          variants={planetVariants}
+        >
           <Image
             src="/imgs/Planet.png"
             alt="Purple Planet drawind"
             layout="fill"
           />
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col lg:flex-row justify-center md:justify-between w-screen mt-80 lg:mt-96 items-center lg:mb-24">
         <div className="flex flex-col h-full w-screen lg:w-auto text-center justify-center lg:justify-start lg:text-left items-center lg:items-start mx-8 md:mb-16 lg:mb-0">
@@ -90,10 +123,10 @@ export default function Home() {
         </div>
       </div>
       <section
-        className="flex justify-center mt-24 md:mt-48 md:mb-24 lg:mb-32"
+        className="flex justify-center mt-24 md:mt-48 md:mb-48"
         style={{ height: "48rem" }}
       >
-        <div className="w-11/12 h-64 md:h-5/6">
+        <div className="w-11/12 h-64 md:h-full">
           <div className="relative w-full h-full images-shadow">
             <Image
               src="/imgs/LandingVolcano.jpg"
@@ -142,7 +175,7 @@ export default function Home() {
         <div className="hidden md:flex gap-6 items-center">
           <GithubIcon
             styles={
-              "flex transition-all duration-300 text-red-300 w-14 h-14 rounded-full"
+              "flex transition-all duration-300 text-red-300 w-14 h-14 hover:ring-2 rounded-full cursor-pointer ring-bgGradientSecond"
             }
             fillColor={"#654EA3"}
           />
