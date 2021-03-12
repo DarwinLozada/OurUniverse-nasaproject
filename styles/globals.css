@@ -21,3 +21,24 @@
 * {
   font-family: "Raleway", sans-serif;
 }
+
+@keyframes circle {
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes updown {
+  to {
+    transform: translateY(100px);
+  }
+}
+
+.planet-container {
+  animation: updown 10s infinite ease-in-out alternate;
+}
+
+.planet {
+  transform-origin: -50% 2px;
+  animation: circle 50s infinite linear;
+}
