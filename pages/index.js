@@ -2,33 +2,27 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { GithubIcon, TwitterIcon } from "../components/SvgComponents";
+import {
+  GithubIcon,
+  RocketSvg,
+  PlanetSvg1,
+  PlanetSvg2,
+} from "../components/SvgComponents";
 import PageIntro from "../components/PageIntro";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
+import { useInView, inView } from "react-intersection-observer";
 
 export default function Home() {
   const [apodData, setApodData] = useState(false);
-  const [scrollYValue, setscrollYValue] = useState(1);
-  const {
-    scrollYProgress,
-    scrollXProgress,
-    scrollY,
-    scrollX,
-  } = useViewportScroll();
-  console.log(scrollYProgress);
-
-  useEffect(() => {
-    setscrollYValue(1 - scrollYProgress);
-  }, [scrollYProgress]);
 
   const rocketVariants = {
     hidden: {
-      scale: 0.5,
+      scale: 0.2,
       x: -1000,
     },
     visible: {
       scale: 1,
-      x: "50%",
+      x: "70%",
       rotate: [25, 0, -20],
     },
   };
@@ -44,7 +38,7 @@ export default function Home() {
         />
       </Head>
       <div className="flex flex-col text-4xl bg-gradient-to-b min-h-screen from-bgGradientFirst to-bgGradientSecond overflow-hidden">
-        <header className="flex w-full justify-between items-center mt-4">
+        <header className="flex w-full justify-between items-center mt-4 z-10">
           <div className="relative w-44 sm:w-1/3 lg:w-72 h-16 md:h-24 ">
             <Image
               src="/static/images/OurUniverse Logo.png"
@@ -56,13 +50,13 @@ export default function Home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/DarwinLozada"
+              href="https://github.com/DarwinLozada/OurUniverse-nasaproject"
               className="flex flex-col-reverse md:flex-row items-center mr-4 sm:mr-12"
             >
               <p className="transition-all duration-200 font-bold text-xs sm:text-sm sm:mr-4 text-gray-800 text-center hover:text-white cursor-pointer">
                 Check the code
               </p>
-              <GithubIcon styles="transition-all duration-200 flex w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-0 lg:w-14 lg:h-14 hover:ring-2 rounded-full cursor-pointer ring-bgGradientSecond" />
+              <GithubIcon ClassNames="transition-all duration-200 flex w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-0 lg:w-14 lg:h-14 hover:ring-2 rounded-full cursor-pointer ring-bgGradientSecond" />
             </a>
           </nav>
         </header>
@@ -84,59 +78,27 @@ export default function Home() {
               type: "spring",
             }}
           >
-            <Image
-              src={"/static/images/Rocket.png"}
-              alt="Rocket"
-              layout="fill"
+            <RocketSvg
+              ClassNames="mt-12 w-36 md:w-48 lg:w-72 text-blue-300"
+              fillColor={"#704180"}
             />
           </motion.div>
           <div className="planet-container">
-            <div className="absolute planet ring-blue-500 -right-48 sm:-right-52 -top-40 w-36 h-36 md:w-80 md:h-80 opacity-50 md:-right-32 md:opacity-75 lg:w-96 lg:h-96 lg:opacity-70">
-              <Image
-                src="/static/images/Planet.png"
-                alt="Purple Planet drawind"
-                layout="fill"
-              />
+            <div className="absolute planet ring-blue-500 -right-24 sm:-right-52 -top-40 w-36 h-36 md:w-80 md:h-80 opacity-50 md:-right-32 md:opacity-75 lg:w-96 lg:h-96 lg:opacity-50">
+              <PlanetSvg1 fillColor={"#320555"} ClassNames="" />
+            </div>
+            <div className="absolute planet ring-blue-500 -left-24 sm:-right-52 -top-40 w-36 h-36 md:w-80 md:h-80 opacity-50 md:-right-32 md:opacity-75 lg:w-96 lg:h-96 lg:opacity-50">
+              <PlanetSvg2 fillColor={"#320555"} ClassNames="" />
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row justify-center md:justify-between w-screen mt-80 lg:mt-96 items-center lg:mb-24">
-          <div className="flex flex-col h-full w-screen lg:w-auto text-center justify-center lg:justify-start lg:text-left items-center lg:items-start mx-8 md:mb-16 lg:mb-0">
-            <h2 className="text-SecondHeadlineColor font-bold md:max-w-lg lg:max-w-lg text-3xl md:text-4xl lg:text-5xl mx-2">
-              Explore the most interesting and curious photos shared by the NASA
-            </h2>
-            <p className="text-base lg:text-lg font-bold max-w-sm mt-14 leading-8">
-              The Astronomy Picture of the Day is an archive that every day
-              shows a different photograp of our fascinating Cosmos along with a
-              brief explanation written by a professional astronomer{" "}
-            </p>
-          </div>
-          <div className="flex flex-col w-11/12 lg:w-7/12 images-shadow h-64 md:h-28rem lg:h-28rem mt-12 md:mt-0">
-            <div className="flex flex-col relative w-full h-full">
-              <Image
-                src="/static/images/LandingImage1.jpg"
-                layout="fill"
-                alt="North American Nightscape"
-                className="opacity-80"
-              />
-            </div>
-            <div className="flex flex-col sm:flex-row ml-2 sm:ml-0 mt-4 sm:mt-6 mr-10 w-full md:justify-between">
-              <p className="text-xss md:text-sm text-gray-300">
-                2021 January 29: North American Nightscape
-              </p>
-              <p className="leading-none text-xss md:text-sm text-gray-300">
-                Compose Image Credit & Copyright:{" "}
-                <span className="text-HeadlineColor font-bold">
-                  Liron Gertsman
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
+
+        <FirstImageSection />
         <section
           className="flex justify-center mt-24 md:mt-48 md:mb-48"
           style={{ height: "48rem" }}
         >
+          {" "}
           <div className="w-11/12 h-64 md:h-full">
             <div className="relative w-full h-full images-shadow">
               <Image
@@ -167,32 +129,137 @@ export default function Home() {
             </button>
           </div>
         </section>
-        <footer className="flex items-center w-screen justify-between md:h-32 bg-FooterColor rounded-t-5xl pt-4 px-8 lg:px-12">
-          <div className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-start w-full">
-            <div className="flex rounded-full items-center justify-center bg-FooterLogoColor px-4 h-28 w-28 mt-4 mb-4">
-              <div className="flex relative justify-center h-20 w-16 px-4 pt-2 pb-3 bg-FooterLogoColor rounded-full images-shadow mt-4 mb-8">
-                <Image
-                  src="/static/images/dev_logo.png"
-                  layout="fill"
-                  alt="Darwin Lozada dev Logo"
-                />
-              </div>
-            </div>
-            <p className="text-gray-300 text-lg md:text-xl md:ml-6 text-center md:text-left">
-              Developed and designed by{" "}
-              <span className="text-white">Darwin Lozada</span>
-            </p>
-          </div>
-          <div className="hidden md:flex gap-6 items-center">
-            <GithubIcon
-              styles={
-                "flex transition-all duration-300 text-red-300 w-14 h-14 hover:ring-2 rounded-full cursor-pointer ring-bgGradientSecond"
-              }
-              fillColor={"#654EA3"}
-            />
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
 }
+
+const FirstImageSectionVariants = {
+  hidden: {
+    scale: 0.3,
+    opacity: 0.3,
+    x: "-100%",
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const FirstImageSection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  console.log(inView);
+
+  return (
+    <div
+      className="flex flex-col justify-center items-center mt-96 md:mt-36rem"
+      ref={ref}
+    >
+      <motion.div
+        variants={FirstImageSectionVariants}
+        transition={{
+          duration: 3,
+          type: "spring",
+        }}
+        inital="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="flex flex-col lg:flex-row justify-center md:justify-between w-screen items-center lg:mb-24"
+      >
+        <div className="flex flex-col h-full w-screen lg:w-auto text-center justify-center lg:justify-start lg:text-left items-center lg:items-start mx-8 md:mb-16 lg:mb-0">
+          <h2 className="text-SecondHeadlineColor font-bold md:max-w-lg lg:max-w-lg text-3xl md:text-4xl lg:text-5xl mx-2">
+            Explore the most interesting and curious photos shared by the NASA
+          </h2>
+          <p className="text-base lg:text-lg font-bold max-w-sm mt-14 leading-8">
+            The Astronomy Picture of the Day is an archive that every day shows
+            a different photograp of our fascinating Cosmos along with a brief
+            explanation written by a professional astronomer{" "}
+          </p>
+        </div>
+        <div className="flex flex-col w-11/12 lg:w-7/12 images-shadow h-64 md:h-28rem lg:h-34rem mt-12 md:mt-0">
+          <div className="flex flex-col relative w-full h-full">
+            <Image
+              src="/static/images/LandingImage1.jpg"
+              layout="fill"
+              alt="North American Nightscape"
+              className="opacity-80"
+            />
+          </div>
+          <div className="flex flex-col sm:flex-row ml-2 sm:ml-0 mt-4 sm:mt-6 mr-10 w-full md:justify-between">
+            <p className="text-xss md:text-sm text-gray-300">
+              2021 January 29: North American Nightscape
+            </p>
+            <p className="leading-none text-xss md:text-sm text-gray-300">
+              Compose Image Credit & Copyright:{" "}
+              <span className="text-HeadlineColor font-bold">
+                Liron Gertsman
+              </span>
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+const footerVariants = {
+  hidden: {
+    y: "-100%",
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+const Footer = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  return (
+    <motion.footer
+      ref={ref}
+      className="flex items-center w-screen justify-between md:h-32 bg-FooterColor rounded-t-5xl pt-4 px-8 lg:px-12"
+      variants={footerVariants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      <div className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-start w-full">
+        <div className="flex rounded-full items-center justify-center bg-FooterLogoColor px-4 h-28 w-28 mt-4 mb-4">
+          <div className="flex relative justify-center h-20 w-16 px-4 pt-2 pb-3 bg-FooterLogoColor rounded-full images-shadow mt-4 mb-8">
+            <Image
+              src="/static/images/dev_logo.png"
+              layout="fill"
+              alt="Darwin Lozada dev Logo"
+            />
+          </div>
+        </div>
+        <p className="text-gray-300 text-lg md:text-xl md:ml-6 text-center md:text-left">
+          Developed and designed by{" "}
+          <span className="text-white">Darwin Lozada</span>
+        </p>
+      </div>
+      <div className="hidden md:flex gap-6 items-center">
+        <a
+          href="https://github.com/DarwinLozada"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <GithubIcon
+            ClassNames={
+              "flex transition-all duration-300 text-red-300 w-14 h-14 hover:ring-2 rounded-full cursor-pointer ring-bgGradientSecond"
+            }
+            fillColor={"#654EA3"}
+          />
+        </a>
+      </div>
+    </motion.footer>
+  );
+};
