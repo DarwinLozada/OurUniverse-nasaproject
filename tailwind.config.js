@@ -12,6 +12,8 @@ module.exports = {
         CallToActionColor: "#AD5389",
         FooterColor: "#291737",
         FooterLogoColor: "#170326",
+        mainContentBg: "#373172",
+        mobileFooterBg: "#9C85BE",
       },
 
       height: {

@@ -11,6 +11,14 @@
     filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.7));
   }
 
+  .images-opaque-shadow {
+    filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.7));
+  }
+
+  .upper-shadow {
+    filter: drop-shadow(0px -3px 8px rgba(0, 0, 0, 0.25));
+  }
+
   .rounded-t-5xl {
     border-radius: 40px 40px 0px 0px;
   }
@@ -38,7 +46,12 @@
   animation: updown 10s infinite ease-in-out alternate;
 }
 
-.planet {
+.planet1 {
   transform-origin: -50% 2px;
+  animation: circle 50s infinite linear;
+}
+
+.planet2 {
+  transform-origin: -20% 2px;
   animation: circle 50s infinite linear;
 }
