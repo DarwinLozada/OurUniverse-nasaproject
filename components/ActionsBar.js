@@ -12,10 +12,15 @@ const MIN_DATE_IN_MILISECONDS = 1420086600000;
 
 const MIN_DATE = new Date(MIN_DATE_IN_MILISECONDS);
 
-export default function ActionsBar({ date, setDate }) {
+export default function ActionsBar({ date, setDate, setIsFetching }) {
   //The first Apod to show is today's, so we assign as the first date
   const [unFormatedDate, setUnFormatedDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(null);
+
+  const handleClickDate = () => {
+    setIsFetching(true);
+    setShowCalendar(false);
+  };
 
   useEffect(() => {
     if (unFormatedDate) {
@@ -56,7 +61,8 @@ export default function ActionsBar({ date, setDate }) {
                 onChange={setUnFormatedDate}
                 maxDate={new Date()}
                 minDate={MIN_DATE}
-                onClickDay={() => setShowCalendar(false)}
+                onClickDay={handleClickDate}
+                // onClickDay={() => setShowCalendar(false)}
                 className="w-72"
                 tileClassName="p-1"
               />

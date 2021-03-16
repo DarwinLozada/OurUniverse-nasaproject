@@ -1,5 +1,5 @@
 import ApodInfo from "../../components/ApodInfo";
-import MobileFooter from "../../components/ActionsBar";
+import ActionsBar from "../../components/ActionsBar";
 import { useEffect, useState } from "react";
 
 //API
@@ -9,6 +9,7 @@ export default function Discover() {
   const [apodData, setApodData] = useState(null);
   //Set the initial state as today date formated in YYYY-MM-DD
   const [date, setDate] = useState();
+  const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
     if (date) {
@@ -19,8 +20,16 @@ export default function Discover() {
   return (
     <div className="w-full h-full max-w-screen">
       <div className="w-screen">
-        <ApodInfo apodData={apodData} />
-        <MobileFooter date={date} setDate={setDate} />
+        <ApodInfo
+          apodData={apodData}
+          isFetching={isFetching}
+          setIsFetching={setIsFetching}
+        />
+        <ActionsBar
+          date={date}
+          setDate={setDate}
+          setIsFetching={setIsFetching}
+        />
       </div>
     </div>
   );

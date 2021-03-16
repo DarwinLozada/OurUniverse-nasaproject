@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 function ImagePlaceholder() {
@@ -7,8 +7,22 @@ function ImagePlaceholder() {
   );
 }
 
-export default function ImageHandler({ layout, src, width, height }) {
+export default function ImageHandler({
+  layout,
+  src,
+  width,
+  height,
+  isFetching,
+}) {
   const [isImageLoading, setIsImageLoading] = useState(true);
+
+  console.log(isImageLoading);
+
+  useEffect(() => {
+    if (isFetching) {
+      setIsImageLoading(true);
+    }
+  }, [isFetching]);
 
   return (
     <div>
