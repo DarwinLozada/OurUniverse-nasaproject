@@ -7,9 +7,8 @@ import { fetchCertainDayApod } from "../../services/apod";
 
 export default function Discover() {
   const [apodData, setApodData] = useState(null);
-  console.log(apodData);
   //Set the initial state as today date formated in YYYY-MM-DD
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState();
 
   useEffect(() => {
     if (date) {

@@ -13,7 +13,8 @@ const MIN_DATE_IN_MILISECONDS = 1420086600000;
 const MIN_DATE = new Date(MIN_DATE_IN_MILISECONDS);
 
 export default function ActionsBar({ date, setDate }) {
-  const [unFormatedDate, setUnFormatedDate] = useState(null);
+  //The first Apod to show is today's, so we assign as the first date
+  const [unFormatedDate, setUnFormatedDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(null);
 
   useEffect(() => {
