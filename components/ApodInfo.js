@@ -8,16 +8,29 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
     setIsFetching(false);
   }, [apodData]);
 
+  if (apodData) {
+    if (apodData.error) {
+      console.log(apodData.error);
+      return (
+        <main className="flex flex-col justify-center items-center bg-mainContentBg min-h-screen px-8 pt-10 pb-24 w-full md:ml-48">
+          <h1 className="text-3xl text-white text-center">
+            There was an error fetching the data :(
+          </h1>
+        </main>
+      );
+    }
+  }
+
   if (!apodData || isFetching) {
     return (
-      <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24">
-        <ApodPlaceholder isThereAnyApodData={Boolean(apodData)} />
+      <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24 w-full md:ml-48">
+        <ApodPlaceholder />
       </main>
     );
   }
 
   return (
-    <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24">
+    <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24 md:ml-48 w-full">
       <AnimatePresence exitBeforeEnter>
         <motion.div
           initial="invisible"
@@ -42,22 +55,18 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
               Copyright: {apodData.copyright ? apodData.copyright : "not found"}
             </p>
           </div>
-          <div className="images-opaque-shadow mt-12 max-w-lg">
-            {apodData.media_type === "image" ? (
-              <ImageHandler
-                layout="responsive"
-                src={apodData.url}
-                isFetching={isFetching}
-                width="960"
-                height="1200"
-              />
-            ) : (
-              <iframe src={apodData.url} className="w-full h-72" />
-            )}
+          <div className="flex flex-col xl:flex-row-reverse">
+            <div className="images-opaque-shadow mt-12 max-w-lg md:max-w-none">
+              {apodData.media_type === "image" ? (
+                <ImageHandler src={apodData.url} isFetching={isFetching} />
+              ) : (
+                <iframe src={apodData.url} className="w-full h-96 xl:w-34rem" />
+              )}
+            </div>
+            <p className="mt-12 md:px-4 xl:p-0 xl:mr-12 leading-7 text-white md:leading-9">
+              {apodData.explanation}
+            </p>
           </div>
-          <p className="mt-12 px-4 leading-7 text-white">
-            {apodData.explanation}
-          </p>
         </motion.div>
       </AnimatePresence>
     </main>

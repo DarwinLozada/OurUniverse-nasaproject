@@ -15,9 +15,9 @@ export default function Discover() {
     if (date) {
       fetchCertainDayApod(date)
         .then((data) => setApodData(data))
-        .catch(
-          (error) => new Error(`There was an error fetching the data: ${error}`)
-        );
+        .catch((error) => {
+          setApodData({ error: error });
+        });
     }
   }, [date]);
 
@@ -33,8 +33,8 @@ export default function Discover() {
         <meta name="author" content="Darwin Lozada" />
         <meta name="robots" content="index" />
       </Head>
-      <div className="w-full h-full max-w-screen">
-        <div className="w-screen">
+      <div className="flex w-full h-full max-w-screen">
+        <div className="flex flex-row-reverse w-screen ">
           <ApodInfo
             apodData={apodData}
             isFetching={isFetching}

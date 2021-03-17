@@ -16,6 +16,11 @@ module.exports = {
         mobileFooterBg: "#9C85BE",
       },
 
+      width: {
+        "28rem": "28rem",
+        "34rem": "34rem",
+      },
+
       height: {
         "28rem": "28rem",
         "34rem": "34rem",

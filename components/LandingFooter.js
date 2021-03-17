@@ -15,7 +15,7 @@ const footerVariants = {
   },
 };
 
-export default function Foote() {
+export default function Footer() {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });

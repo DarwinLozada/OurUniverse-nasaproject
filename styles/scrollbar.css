@@ -1,4 +1,4 @@
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   transition: background-color 0.4s ease;
   width: 1rem;
   background-color: rgb(173, 173, 173);
@@ -6,11 +6,11 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-body::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background-color: rgb(163, 163, 163);
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 0.8em;
   background-color: #eeeef0;
 }

@@ -42,6 +42,24 @@
   }
 }
 
+@-webkit-keyframes slide {
+  to {
+    background-position: 100%;
+  }
+}
+
+@-moz-keyframes slide {
+  to {
+    background-position: 100%;
+  }
+}
+
+@keyframes slide {
+  to {
+    background-position: 100%;
+  }
+}
+
 .planet-container {
   animation: updown 10s infinite ease-in-out alternate;
 }
