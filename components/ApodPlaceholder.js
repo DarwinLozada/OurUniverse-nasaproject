@@ -1,6 +1,22 @@
+import { motion } from "framer-motion";
+
 export default function ApodPlaceholder() {
   return (
-    <>
+    <motion.div
+      initial="invisible"
+      animate="visible"
+      exit="invisible"
+      key="apodInfo"
+      transition={{ duration: 1 }}
+      variants={{
+        invisible: { opacity: 0, scale: 0.6, y: 100 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        },
+      }}
+    >
       <div className="animate-pulse w-full h-12 rounded-full bg-gray-500"></div>
       <div className="animate-pulse w-4/6 h-8 rounded-full bg-gray-500 mt-4"></div>
       <div className="animate-pulse w-full bg-gray-500 h-72 rounded mt-8"></div>
@@ -8,6 +24,6 @@ export default function ApodPlaceholder() {
       <div className="animate-pulse w-full h-6 bg-gray-500 rounded mt-6"></div>
       <div className="animate-pulse w-full h-6 bg-gray-500 rounded mt-6"></div>
       <div className="animate-pulse w-full h-6 bg-gray-500 rounded mt-6"></div>
-    </>
+    </motion.div>
   );
 }

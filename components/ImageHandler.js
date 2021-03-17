@@ -28,7 +28,7 @@ export default function ImageHandler({
     <div>
       {isImageLoading && <ImagePlaceholder />}
       <div className={`${isImageLoading ? "hidden" : "inline"}`}>
-        <Image
+        <img
           layout={layout ? layout : "fill"}
           src={src}
           width={width ? width : null}

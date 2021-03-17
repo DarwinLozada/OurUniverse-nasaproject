@@ -13,7 +13,11 @@ export default function Discover() {
 
   useEffect(() => {
     if (date) {
-      fetchCertainDayApod(date).then((data) => setApodData(data));
+      fetchCertainDayApod(date)
+        .then((data) => setApodData(data))
+        .catch(
+          (error) => new Error(`There was an error fetching the data: ${error}`)
+        );
     }
   }, [date]);
 

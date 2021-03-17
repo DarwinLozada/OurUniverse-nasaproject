@@ -24,11 +24,11 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
           animate="visible"
           exit="invisible"
           key="apodInfo"
+          transition={{ duration: 1.2 }}
           variants={{
-            invisible: { opacity: 0, scale: 0, y: 100 },
+            invisible: { opacity: 0, y: 100 },
             visible: {
               opacity: 1,
-              scale: 1,
               y: 0,
             },
           }}
