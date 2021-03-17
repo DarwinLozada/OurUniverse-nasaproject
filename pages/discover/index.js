@@ -5,13 +5,11 @@ import Head from "next/head";
 //API
 import { fetchCertainDayApod } from "../../services/apod";
 
-export default function Discover({ data }) {
+export default function Discover() {
   const [apodData, setApodData] = useState(null);
   //Set the initial state as today date formated in YYYY-MM-DD
   const [date, setDate] = useState();
   const [isFetching, setIsFetching] = useState(true);
-
-  console.log(data);
 
   useEffect(() => {
     if (date) {

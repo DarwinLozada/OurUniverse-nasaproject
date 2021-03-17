@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 import Head from "next/head";
 import Link from "next/link";
 
@@ -194,8 +192,6 @@ const SecondImageSection = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
-
-  console.log(inView);
 
   return (
     <section
