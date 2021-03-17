@@ -120,10 +120,10 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
             <span
               className="brand w-full font-bold text-xl"
               style={{
-                "background-image": "linear-gradient(190deg, #fc65c4, #546ef7)",
-                "-webkit-background-clip": "text",
-                "text-fill-color": "transparent",
-                "-webkit-text-fill-color": "transparent",
+                backgroundImage: "linear-gradient(190deg, #fc65c4, #546ef7)",
+                WebkitBackgroundClip: "text",
+                textFillColor: "transparent",
+                WebkitTextFillColor: "transparent",
               }}
             >
               Darwin lozada
