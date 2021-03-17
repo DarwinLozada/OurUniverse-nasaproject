@@ -115,7 +115,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/DarwinLozada/OurUniverse-nasaproject"
+            href="https://github.com/DarwinLozada"
           >
             <span
               className="brand w-full font-bold text-xl"
