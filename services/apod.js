@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const key = "b4Tr3NSppWqc1BaLty68iazAybyDXZ2d7tiKI8iN";
+const key = process.env.API_KEY || "DEMO_KEY";
 const url = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
 
 //APOD stans for "Astronomic picture of the day"

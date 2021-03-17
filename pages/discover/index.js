@@ -1,15 +1,18 @@
 import ApodInfo from "../../components/ApodInfo";
 import ActionsBar from "../../components/ActionsBar";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 //API
 import { fetchCertainDayApod } from "../../services/apod";
 
-export default function Discover() {
+export default function Discover({ data }) {
   const [apodData, setApodData] = useState(null);
   //Set the initial state as today date formated in YYYY-MM-DD
   const [date, setDate] = useState();
   const [isFetching, setIsFetching] = useState(true);
+
+  console.log(data);
 
   useEffect(() => {
     if (date) {

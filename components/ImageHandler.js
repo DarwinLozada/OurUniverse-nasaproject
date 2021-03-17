@@ -16,8 +16,6 @@ export default function ImageHandler({
 }) {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
-  console.log(isImageLoading);
-
   useEffect(() => {
     if (isFetching) {
       setIsImageLoading(true);
