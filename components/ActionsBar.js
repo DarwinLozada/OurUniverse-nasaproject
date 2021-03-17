@@ -39,7 +39,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           <HomeIcon />
         </div>
       </Link>
-      <div className="relative flex flex-col items-center">
+      <nav className="relative flex flex-col items-center">
         <AnimatePresence>
           {showCalendar && (
             <motion.div
@@ -77,7 +77,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
         >
           <CalendarIcon />
         </button>
-      </div>
+      </nav>
       <div>
         <a
           target="_blank"

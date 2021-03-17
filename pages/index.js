@@ -15,8 +15,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Home() {
-  const [apodData, setApodData] = useState(false);
-
   const rocketVariants = {
     hidden: {
       scale: 0.2,
@@ -32,6 +30,12 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta
+          name="description"
+          content="Explore our amazing universe through the NASA's Astronomic Picture of the Day API"
+        />
+        <meta name="author" content="Darwin Lozada" />
+        <meta name="robots" content="index" />
         <title>Our Universe - Discover</title>
         <link
           rel="preconnect"
@@ -46,6 +50,7 @@ export default function Home() {
               src="/static/images/OurUniverse Logo.png"
               layout="fill"
               alt="OurUniverse Logo"
+              priority={true}
             />
           </div>
           <nav className="flex flex-col-reverse md:flex-row items-center">
@@ -152,6 +157,7 @@ const FirstImageSection = () => {
               layout="fill"
               alt="North American Nightscape"
               className="opacity-80"
+              priority={true}
             />
           </div>
           <div className="flex flex-col sm:flex-row ml-2 sm:ml-0 mt-4 sm:mt-6 mr-10 w-full md:justify-between">
@@ -214,6 +220,7 @@ const SecondImageSection = () => {
             layout="fill"
             alt="Volcano Photograph"
             className="flex justify-center items-center"
+            priority={true}
           ></Image>
           <Link href="/discover">
             <button className="hidden md:block transition duration-200 focus:outline-none focus:ring-4 ring-bgGradientSecond md:absolute images-shadow right-0 left-0 bottom-1/2 mx-auto bg-opacity-80 text-white font-bold  bg-CallToActionColor px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
