@@ -176,7 +176,7 @@ const FirstImageSection = () => {
 const SecondImageSectionVariants = {
   hidden: {
     scale: 0.3,
-    opacity: 0.3,
+    opacity: 0,
     y: "-50%",
   },
   visible: {
@@ -241,14 +241,11 @@ const SecondImageSection = () => {
           </p>
         </div>
         <Link href="/discover">
-          <button
-            style={{ backgroundColor: "#AD47E2" }}
-            className="transition duration-200 md:hidden w-full hover:ring-2 focus:outline-none focus:ring-4 ring-bgGradientSecond bg-CallToActionColor text-white text-3xl font-semibold rounded py-8 images-shadow"
-          >
+          <button className="transition duration-500 md:hidden w-full focus:outline-none focus:ring-4 ring-bgGradientSecond bg-purple-800 hover:bg-purple-900 text-white text-3xl font-semibold rounded py-8 images-shadow">
             <p
               className="text-4xl font-bold text-gradient md:text-5xl opacity-100 text-white"
               style={{
-                backgroundImage: "linear-gradient(190deg, #ffffff, #e6d7fc)",
+                backgroundImage: "linear-gradient(190deg, #ffffff, #e9aefc)",
                 WebkitBackgroundClip: "text",
                 textFillColor: "transparent",
                 WebkitTextFillColor: "transparent",
