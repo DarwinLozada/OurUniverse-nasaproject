@@ -20,7 +20,7 @@ export default function ImageHandler({ src, mediaType, isFetching }) {
       {isImageLoading && <MediaPlaceholder />}
       <div className={`${isImageLoading ? "hidden" : "inline"} w-full`}>
         {mediaType === "image" ? (
-          <img src={src} onLoad={() => setIsImageLoading(false)} className="" />
+          <img src={src} onLoad={() => setIsImageLoading(false)} />
         ) : (
           <iframe
             src={src}

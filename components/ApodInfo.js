@@ -1,9 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MediaHandler from "./MediaHandler";
 import ApodPlaceholder from "./ApodPlaceholder";
+import ImageExposer from "./ImageExposer";
 
 export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
+  const [showImageModal, setShowImageModal] = useState(false);
+
   useEffect(() => {
     setIsFetching(false);
   }, [apodData]);
@@ -31,6 +34,14 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
 
   return (
     <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24 md:ml-48 w-full xl:pl-10">
+      <AnimatePresence>
+        {showImageModal && (
+          <ImageExposer
+            src={apodData.url}
+            setShowImageModal={setShowImageModal}
+          />
+        )}
+      </AnimatePresence>
       <AnimatePresence exitBeforeEnter>
         <motion.div
           initial="invisible"
@@ -56,7 +67,10 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
             </p>
           </div>
           <div className="flex flex-col xl:flex-row-reverse">
-            <div className="images-opaque-shadow mt-12 max-w-lg md:max-w-none">
+            <div
+              className="images-opaque-shadow mt-12 max-w-lg md:max-w-none cursor-pointer"
+              onClick={() => setShowImageModal(true)}
+            >
               <MediaHandler
                 src={apodData.url}
                 isFetching={isFetching}

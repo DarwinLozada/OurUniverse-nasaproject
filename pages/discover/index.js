@@ -23,6 +23,8 @@ export default function Discover() {
 
   return (
     <>
+      <div id="image-wrapper-modal"></div>
+
       <Head>
         <title>Our Universe</title>
         <meta
