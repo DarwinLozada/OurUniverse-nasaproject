@@ -30,7 +30,7 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
   }
 
   return (
-    <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24 md:ml-48 w-full">
+    <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24 md:ml-48 w-full xl:pl-10">
       <AnimatePresence exitBeforeEnter>
         <motion.div
           initial="invisible"

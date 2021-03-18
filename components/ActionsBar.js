@@ -1,11 +1,14 @@
 import Calendar from "react-calendar";
-import { motion, AnimatePresence } from "framer-motion";
 import { CalendarIcon, HomeIcon, GithubShapeIcon } from "./SvgComponents";
-import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { useEffect, useState } from "react";
-import useFormatedDate from "../hooks/useFormatedDate";
+
 import Image from "next/image";
+import Link from "next/link";
+
 import { fetchTodayApod } from "../services/apod";
+import useFormatedDate from "../hooks/useFormatedDate";
 
 // The NASA's APOD API has pages from the current date through January 1, 2015.
 //This constant represents the miliseconds passed since the Unix time stamp
@@ -47,13 +50,15 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
   return (
     <footer className="fixed md:h-screen md:flex-col flex bottom-0 h-0 w-full md:w-48 md:left-0 items-center bg-mainContentBg upper-shadow border-FooterLogoColor py-8 stroke-current text-gray-100">
       <div
-        className="relative w-44 hidden h-24 md:block"
+        className="relative hidden md:block"
         style={{ filter: "brightness(1.7)" }}
       >
         <Image
-          src="/static/images/OurUniverse Logo.png"
-          layout="fill"
+          src="/static/images/OurUniverse Logo Light.png"
+          layout="intrinsic"
           alt="OurUniverse Logo"
+          width="165"
+          height="110"
           priority={true}
         />
       </div>
@@ -121,7 +126,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
         <p className="hidden md:block mt-20 text-xs text-gray-400">
           The minimun date you can pick is the 2015-01-01
         </p>
-        <div className="flex flex-col items-center text-left text-sm mt-8">
+        <div className="flex flex-col text-left text-sm mt-8">
           <p>Designed and developed by </p>
           <a
             target="_blank"
