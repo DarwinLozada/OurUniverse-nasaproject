@@ -46,8 +46,10 @@ export default function Home() {
           <div className="relative w-44 sm:w-1/3 lg:w-72 h-16 md:h-24 ">
             <Image
               src="/static/images/OurUniverse Logo.png"
-              layout="fill"
+              layout="intrinsic"
               alt="OurUniverse Logo"
+              width="270"
+              height="100"
             />
           </div>
           <nav className="flex flex-col-reverse md:flex-row items-center">
