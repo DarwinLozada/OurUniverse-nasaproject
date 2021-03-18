@@ -48,7 +48,6 @@ export default function Home() {
               src="/static/images/OurUniverse Logo.png"
               layout="fill"
               alt="OurUniverse Logo"
-              priority={true}
             />
           </div>
           <nav className="flex flex-col-reverse md:flex-row items-center">
@@ -153,7 +152,6 @@ const FirstImageSection = () => {
               layout="fill"
               alt="North American Nightscape"
               className="opacity-80"
-              priority={true}
             />
           </div>
           <div className="flex flex-col sm:flex-row ml-2 sm:ml-0 mt-4 sm:mt-6 mr-10 w-full md:justify-between">
@@ -214,8 +212,7 @@ const SecondImageSection = () => {
             layout="fill"
             alt="Volcano Photograph"
             className="flex justify-center items-center"
-            priority={true}
-          ></Image>
+          />
           <Link href="/discover">
             <button className="hidden md:block transition duration-500 bg-purple-800 hover:bg-purple-900 focus:outline-none focus:ring-4 ring-bgGradientSecond md:absolute images-opaque-shadow right-0 left-0 bottom-1/2 mx-auto text-white px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
               <p
