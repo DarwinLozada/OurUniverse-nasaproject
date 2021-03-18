@@ -16,10 +16,7 @@ export default function ImageHandler({ src, mediaType, isFetching }) {
   }, [isFetching]);
 
   return (
-    <div
-      className="xl:w-34rem md:max-h-96 overflow-y-auto"
-      style={{ maxHeight: "32rem" }}
-    >
+    <div className="xl:w-34rem overflow-y-auto" style={{ maxHeight: "40rem" }}>
       {isImageLoading && <MediaPlaceholder />}
       <div className={`${isImageLoading ? "hidden" : "inline"} w-full`}>
         {mediaType === "image" ? (

@@ -48,7 +48,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
   }, [unFormatedDate]);
 
   return (
-    <footer className="fixed md:h-screen md:flex-col flex bottom-0 h-0 w-full md:w-48 md:left-0 items-center bg-mainContentBg upper-shadow border-FooterLogoColor py-8 stroke-current text-gray-100">
+    <footer className="fixed md:h-screen md:flex-col flex bottom-0 h-0 w-full md:w-48 md:left-0 items-center bg-mainContentBg upper-shadow border-FooterLogoColor py-8 stroke-current text-gray-300">
       <div
         className="relative hidden md:block"
         style={{ filter: "brightness(1.7)" }}
