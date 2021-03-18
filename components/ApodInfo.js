@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import MediaHandler from "./MediaHandler";
 import ApodPlaceholder from "./ApodPlaceholder";
-import ImageExposer from "./ImageExposer";
+import ImageModal from "./ImageModal";
 
 export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
   const [showImageModal, setShowImageModal] = useState(false);
@@ -36,7 +36,7 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
     <main className="flex flex-col bg-mainContentBg min-h-screen px-8 pt-10 pb-24 md:ml-48 w-full xl:pl-10">
       <AnimatePresence>
         {showImageModal && (
-          <ImageExposer
+          <ImageModal
             src={apodData.url}
             setShowImageModal={setShowImageModal}
           />
