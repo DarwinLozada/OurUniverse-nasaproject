@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import ImageHandler from "./ImageHandler";
+import MediaHandler from "./MediaHandler";
 import ApodPlaceholder from "./ApodPlaceholder";
 
 export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
@@ -57,11 +57,11 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
           </div>
           <div className="flex flex-col xl:flex-row-reverse">
             <div className="images-opaque-shadow mt-12 max-w-lg md:max-w-none">
-              {apodData.media_type === "image" ? (
-                <ImageHandler src={apodData.url} isFetching={isFetching} />
-              ) : (
-                <iframe src={apodData.url} className="w-full h-96 xl:w-34rem" />
-              )}
+              <MediaHandler
+                src={apodData.url}
+                isFetching={isFetching}
+                mediaType={apodData.media_type}
+              />
             </div>
             <p className="mt-12 md:px-4 xl:p-0 xl:mr-12 leading-7 text-white md:leading-9">
               {apodData.explanation}

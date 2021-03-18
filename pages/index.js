@@ -84,7 +84,7 @@ export default function Home() {
             }}
           >
             <RocketSvg
-              classNames="mt-12 w-36 md:w-48 lg:w-72 text-blue-300"
+              classNames="mt-12 w-36 md:w-48 lg:w-72 text-blue-300 opacity-100"
               fillColor={"#704180"}
             />
           </motion.div>

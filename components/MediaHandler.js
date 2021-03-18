@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
 
-function ImagePlaceholder() {
+function MediaPlaceholder() {
   return (
     <div className="animate-pulse w-full bg-gray-500 h-72 rounded mt-8 xl:m-0"></div>
   );
 }
 
-export default function ImageHandler({
-  layout,
-  src,
-  width,
-  height,
-  isFetching,
-}) {
+export default function ImageHandler({ src, mediaType, isFetching }) {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
@@ -26,9 +20,17 @@ export default function ImageHandler({
       className="xl:w-34rem md:max-h-96 overflow-y-auto"
       style={{ maxHeight: "32rem" }}
     >
-      {isImageLoading && <ImagePlaceholder />}
+      {isImageLoading && <MediaPlaceholder />}
       <div className={`${isImageLoading ? "hidden" : "inline"} w-full`}>
-        <img src={src} onLoad={() => setIsImageLoading(false)} className="" />
+        {mediaType === "image" ? (
+          <img src={src} onLoad={() => setIsImageLoading(false)} className="" />
+        ) : (
+          <iframe
+            src={src}
+            className="w-full h-96 xl:w-34rem"
+            onLoad={() => setIsImageLoading(false)}
+          />
+        )}
       </div>
     </div>
   );
