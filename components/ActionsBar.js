@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import useFormatedDate from "../hooks/useFormatedDate";
 import Image from "next/image";
+import { fetchTodayApod } from "../services/apod";
 
 // The NASA's APOD API has pages from the current date through January 1, 2015.
 //This constant represents the miliseconds passed since the Unix time stamp
@@ -15,13 +16,23 @@ const MIN_DATE = new Date(MIN_DATE_IN_MILISECONDS);
 
 export default function ActionsBar({ date, setDate, setIsFetching }) {
   //The first Apod to show is today's, so we assign as the first date
-  const [unFormatedDate, setUnFormatedDate] = useState(new Date());
+  const [unFormatedDate, setUnFormatedDate] = useState(null);
   const [showCalendar, setShowCalendar] = useState(null);
 
   const handleClickDate = () => {
     setIsFetching(true);
     setShowCalendar(false);
   };
+
+  // Set the initial date as the last Apod posted in the Api
+  // This avoids conflicts between different time zones
+
+  useEffect(() => {
+    fetchTodayApod().then((data) => {
+      const todayApod = data;
+      setDate(todayApod.date);
+    });
+  }, []);
 
   useEffect(() => {
     if (unFormatedDate) {
