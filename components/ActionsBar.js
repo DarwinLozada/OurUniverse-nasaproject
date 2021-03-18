@@ -118,7 +118,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
             href="https://github.com/DarwinLozada"
           >
             <span
-              className="brand w-full font-bold text-xl"
+              className="text-gradient w-full font-bold text-xl"
               style={{
                 backgroundImage: "linear-gradient(190deg, #fc65c4, #546ef7)",
                 WebkitBackgroundClip: "text",
@@ -131,20 +131,6 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           </a>
         </div>
       </div>
-      <style jsx global>
-        {`
-          .brand {
-            background-image: linear-gradient(90deg, #fc65c4, #546ef7);
-            background-size: 200%;
-            background-position: -110%;
-          }
-
-          .brand:hover {
-            -webkit-animation: slide 2s linear infinite;
-            animation: slide 1s linear infinite;
-          }
-        `}
-      </style>
     </footer>
   );
 }

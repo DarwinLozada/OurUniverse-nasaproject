@@ -73,3 +73,13 @@
   transform-origin: -20% 2px;
   animation: circle 50s infinite linear;
 }
+
+.text-gradient {
+  background-size: 200%;
+  background-position: -110%;
+}
+
+.text-gradient:hover {
+  -webkit-animation: slide 1.4s linear infinite;
+  animation: slide 1.4s linear infinite;
+}

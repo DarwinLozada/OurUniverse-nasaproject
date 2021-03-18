@@ -9,7 +9,6 @@ module.exports = {
         HeadlineColor: "#320555",
         SpanHeadlineColor: "#AC43FF",
         SecondHeadlineColor: "#5C215E",
-        CallToActionColor: "#AD5389",
         FooterColor: "#291737",
         FooterLogoColor: "#170326",
         mainContentBg: "#373172",

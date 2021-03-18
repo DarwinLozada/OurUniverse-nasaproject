@@ -109,12 +109,10 @@ const FirstImageSectionVariants = {
   hidden: {
     scale: 0.3,
     opacity: 0.3,
-    x: "-100%",
   },
   visible: {
     scale: 1,
     opacity: 1,
-    x: 0,
   },
 };
 
@@ -179,12 +177,12 @@ const SecondImageSectionVariants = {
   hidden: {
     scale: 0.3,
     opacity: 0.3,
-    x: "-100%",
+    y: "-50%",
   },
   visible: {
     scale: 1,
     opacity: 1,
-    x: 0,
+    y: 0,
   },
 };
 
@@ -219,9 +217,17 @@ const SecondImageSection = () => {
             priority={true}
           ></Image>
           <Link href="/discover">
-            <button className="hidden md:block transition duration-200 focus:outline-none focus:ring-4 ring-bgGradientSecond md:absolute images-shadow right-0 left-0 bottom-1/2 mx-auto bg-opacity-80 text-white font-bold  bg-CallToActionColor px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
-              <p className="text-2xl md:text-5xl opacity-100">
-                Join the experience!
+            <button className="hidden md:block transition duration-500 bg-purple-800 hover:bg-purple-900 focus:outline-none focus:ring-4 ring-bgGradientSecond md:absolute images-opaque-shadow right-0 left-0 bottom-1/2 mx-auto text-white px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
+              <p
+                className="text-2xl text-gradient md:text-5xl opacity-100 text-white  font-bold"
+                style={{
+                  backgroundImage: "linear-gradient(190deg, #ffffff, #e9aefc)",
+                  WebkitBackgroundClip: "text",
+                  textFillColor: "transparent",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Get started!
               </p>
             </button>
           </Link>
@@ -230,14 +236,27 @@ const SecondImageSection = () => {
           <p className="text-xss md:text-sm text-gray-300">
             2021 March 3: Stars over an Erupting Volcano
           </p>
-          <p className="text-xss md:text-sm text-gray-300">
+          <p className="text-xs md:text-sm text-gray-300">
             Image Credit & Copyright:{" "}
             <span className="text-HeadlineColor font-bold">Giuseppe Vella</span>
           </p>
         </div>
         <Link href="/discover">
-          <button className="transition duration-200 md:hidden w-full hover:ring-2 focus:outline-none focus:ring-4 ring-bgGradientSecond bg-CallToActionColor text-white text-3xl font-semibold rounded py-8 images-shadow">
-            Join the experience!
+          <button
+            style={{ backgroundColor: "#AD47E2" }}
+            className="transition duration-200 md:hidden w-full hover:ring-2 focus:outline-none focus:ring-4 ring-bgGradientSecond bg-CallToActionColor text-white text-3xl font-semibold rounded py-8 images-shadow"
+          >
+            <p
+              className="text-4xl font-bold text-gradient md:text-5xl opacity-100 text-white"
+              style={{
+                backgroundImage: "linear-gradient(190deg, #ffffff, #e6d7fc)",
+                WebkitBackgroundClip: "text",
+                textFillColor: "transparent",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Get started!
+            </p>
           </button>
         </Link>
       </motion.div>
