@@ -42,7 +42,7 @@ export default function Home() {
         <meta name="author" content="Darwin Lozada" />
         <meta name="robots" content="index" />
         <meta name="twitter:card" content="summary_large_image"></meta>
-        <meta name="og:image" content="https://i.imgur.com/K1ZGEcc.png" />
+        <meta name="og:image" content="https://i.imgur.com/eNpnn5y.png" />
         <meta property="og:url" content="https://our-universe.vercel.app/" />
 
         <title>Our Universe - Discover</title>
