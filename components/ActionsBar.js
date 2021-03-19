@@ -28,14 +28,8 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
   const [unFormatedDate, setUnFormatedDate] = useState(null);
   const [showCalendar, setShowCalendar] = useState(null);
 
-  const handleClickDate = () => {
-    setIsFetching(true);
-    setShowCalendar(false);
-  };
-
   // Set the initial date as the last Apod posted in the Api
   // This avoids conflicts between different time zones
-
   useEffect(() => {
     fetchTodayApod().then((data) => {
       const todayApod = data;
@@ -48,6 +42,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
       const formatedDate = useFormatedDate(unFormatedDate);
       //Change the date only if it is not the same
       if (formatedDate !== date) {
+        setIsFetching(true);
         setDate(formatedDate);
       }
     }
@@ -68,7 +63,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           priority={true}
         />
       </div>
-      <section className="flex md:flex-col px-6 justify-around w-full md:h-full">
+      <section className="flex md:flex-col px-6 md:mt-16 justify-around w-full md:h-full">
         <Link href="/">
           <div className="flex items-center transition duration-400 focus:text-HeadlineColor hover:text-purple-500 cursor-pointer">
             <HomeIcon />
@@ -98,7 +93,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
                   onChange={setUnFormatedDate}
                   maxDate={new Date()}
                   minDate={MIN_DATE}
-                  onClickDay={handleClickDate}
+                  onClickDay={() => setShowCalendar(false)}
                   className="w-80 text-black"
                   tileClassName="transition duratin-300 p-1 hover:text-purple-400"
                 />
