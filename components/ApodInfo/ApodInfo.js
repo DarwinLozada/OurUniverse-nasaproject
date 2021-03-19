@@ -39,6 +39,7 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
           <MediaModal
             src={apodData.url}
             mediaType={apodData.media_type}
+            altText={apodData.title}
             setShowImageModal={setShowImageModal}
             closeModalClickingOutside={true}
           />
@@ -62,7 +63,7 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
           <h2 className="text-white font-semibold text-4xl">
             {apodData.title}
           </h2>
-          <div className="flex text-sm text-gray-400 mt-6">
+          <div className="flex text-sm text-gray-200 mt-6">
             <p className="mr-6">{apodData.date}</p>
             <p>
               Copyright: {apodData.copyright ? apodData.copyright : "not found"}
@@ -77,6 +78,7 @@ export default function ApodInfo({ apodData, isFetching, setIsFetching }) {
                 src={apodData.url}
                 isFetching={isFetching}
                 mediaType={apodData.media_type}
+                altText={apodData.title}
               />
             </div>
             <p className="mt-12 md:px-4 xl:p-0 xl:mr-12 leading-7 text-white md:leading-9">

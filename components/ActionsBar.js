@@ -107,6 +107,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           </AnimatePresence>
           <button
             onClick={() => setShowCalendar(!showCalendar)}
+            aria-label="Calendar, choose a date"
             className={`flex flex-col transition hover:text-purple-400 duration-400 rounded focus:outline-none ${
               showCalendar && "text-purple-400"
             }`}
@@ -119,6 +120,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
         </nav>
         <a
           target="_blank"
+          aria-label="Darwin Lozada's github account"
           rel="noopener noreferrer"
           href="https://github.com/DarwinLozada/OurUniverse-nasaproject"
           className="flex flex-col-reverse transition duration-400 md:flex-row items-center hover:text-purple-400"

@@ -6,7 +6,7 @@ function MediaPlaceholder() {
   );
 }
 
-export default function ImageHandler({ src, mediaType, isFetching }) {
+export default function ImageHandler({ src, mediaType, isFetching, altText }) {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,11 @@ export default function ImageHandler({ src, mediaType, isFetching }) {
       {isImageLoading && <MediaPlaceholder />}
       <div className={`${isImageLoading ? "hidden" : "inline"} w-full`}>
         {mediaType === "image" ? (
-          <img src={src} onLoad={() => setIsImageLoading(false)} />
+          <img
+            src={src}
+            onLoad={() => setIsImageLoading(false)}
+            alt={altText}
+          />
         ) : (
           <iframe
             src={src}

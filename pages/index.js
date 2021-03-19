@@ -232,7 +232,7 @@ const SecondImageSection = () => {
           </Link>
         </div>
         <div className="flex flex-col md:flex-row w-full mb-24 text-xl justify-between mt-6">
-          <p className="text-xss md:text-sm text-gray-300">
+          <p className="text-xs md:text-sm text-gray-300">
             2021 March 3: Stars over an Erupting Volcano
           </p>
           <p className="text-xs md:text-sm text-gray-300">
