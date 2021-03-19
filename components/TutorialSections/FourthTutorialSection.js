@@ -11,7 +11,7 @@ export default function FourthTutorialSection({ setShowTutorial }) {
   return (
     <div className="w-full h-full flex justify-center items-center">
       <h1
-        className="text-6xl text-gradient font-bold mb-16"
+        className="text-6xl text-gradient font-bold mb-24"
         style={{
           backgroundImage: "linear-gradient(190deg, #ffffff, #b26be8)",
           WebkitBackgroundClip: "text",
