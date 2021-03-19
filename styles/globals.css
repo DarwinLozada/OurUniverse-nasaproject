@@ -79,7 +79,7 @@
   background-position: -110%;
 }
 
-.text-gradient:hover {
+.text-gradient-hover:hover {
   -webkit-animation: slide 1.4s linear infinite;
   animation: slide 1.4s linear infinite;
 }

@@ -14,7 +14,7 @@ export const GithubIcon = ({ classNames, fillColor }) => {
   );
 };
 
-export const GithubShapeIcon = ({ classNames, fillColor }) => {
+export const GithubShapeIcon = ({ classNames }) => {
   return (
     <svg
       width="29"
@@ -25,7 +25,6 @@ export const GithubShapeIcon = ({ classNames, fillColor }) => {
     >
       <path
         d="M19.9487 27V22.3987C19.9968 21.8318 19.9142 21.2619 19.7064 20.7268C19.4986 20.1918 19.1704 19.7039 18.7436 19.2955C22.7692 18.8794 27 17.4645 27 10.9728C26.9997 9.31284 26.3111 7.71651 25.0769 6.51423C25.6614 5.06193 25.62 3.45664 24.9615 2.03186C24.9615 2.03186 23.4487 1.61572 19.9487 3.79152C17.0103 3.05296 13.9128 3.05296 10.9744 3.79152C7.47436 1.61572 5.96154 2.03186 5.96154 2.03186C5.30305 3.45664 5.26172 5.06193 5.84615 6.51423C4.60273 7.72542 3.91349 9.33618 3.92308 11.0085C3.92308 17.4527 8.15385 18.8675 12.1795 19.3312C11.7577 19.7354 11.4324 20.2175 11.2248 20.746C11.0171 21.2745 10.9318 21.8376 10.9744 22.3987V27M10.9744 23.4331C4.5641 25.2166 4.5641 20.4607 2 19.8662L10.9744 23.4331Z"
-        stroke={fillColor}
         strokeWidth="2.6"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -197,7 +196,7 @@ export const PlanetSvg2 = ({ classNames, fillColor }) => {
   );
 };
 
-export const CalendarIcon = ({ classNames, fillColor }) => {
+export const CalendarIcon = ({ classNames }) => {
   return (
     <svg
       width="29"
@@ -208,28 +207,24 @@ export const CalendarIcon = ({ classNames, fillColor }) => {
     >
       <path
         d="M22 4.5H7C4.23858 4.5 2 6.73858 2 9.5V22C2 24.7614 4.23858 27 7 27H22C24.7614 27 27 24.7614 27 22V9.5C27 6.73858 24.7614 4.5 22 4.5Z"
-        stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M9.5 2V7"
-        stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M19.5 2V7"
-        stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M2 12H27"
-        stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -238,7 +233,7 @@ export const CalendarIcon = ({ classNames, fillColor }) => {
   );
 };
 
-export const HomeIcon = ({ classNames, fillColor }) => {
+export const HomeIcon = ({ classNames }) => {
   return (
     <svg
       width="29"
@@ -249,10 +244,39 @@ export const HomeIcon = ({ classNames, fillColor }) => {
     >
       <path
         d="M27 24.5307V14.8683C27.0001 14.1961 26.8612 13.5309 26.5919 12.9136C26.3226 12.2962 25.9285 11.7396 25.4337 11.278L16.2175 2.67496C15.7533 2.24151 15.1388 2 14.5 2C13.8612 2 13.2467 2.24151 12.7825 2.67496L3.56625 11.278C3.07153 11.7396 2.67744 12.2962 2.40812 12.9136C2.1388 13.5309 1.99993 14.1961 2 14.8683V24.5307C2 25.1856 2.26339 25.8137 2.73223 26.2768C3.20107 26.7398 3.83696 27 4.5 27H24.5C25.163 27 25.7989 26.7398 26.2678 26.2768C26.7366 25.8137 27 25.1856 27 24.5307Z"
-        stroke={fillColor}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const ArrowIcon = ({ classNames }) => {
+  return (
+    <svg className={classNames} viewBox="0 0 512 512" fill="none">
+      <title>Arrow Forward</title>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="48"
+        d="M268 112l144 144-144 144M392 256H100"
+      />
+    </svg>
+  );
+};
+
+export const CursorIcon = ({ classNames }) => {
+  return (
+    <svg className={classNames} viewBox="0 0 512 512">
+      <title>Navigate</title>
+      <path
+        d="M448 64L64 240.14h200a8 8 0 018 8V448z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
       />
     </svg>
   );

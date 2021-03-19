@@ -1,5 +1,11 @@
 import Calendar from "react-calendar";
-import { CalendarIcon, HomeIcon, GithubShapeIcon } from "./SvgComponents";
+import {
+  CalendarIcon,
+  HomeIcon,
+  GithubShapeIcon,
+  CaretArrowIcon,
+  ChevronArrowIcon,
+} from "./SvgComponents";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { useEffect, useState } from "react";
@@ -74,7 +80,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           <AnimatePresence>
             {showCalendar && (
               <motion.div
-                className="flex absolute -top-64 -right-36 md:-top-24 md:-right-96 bg-white px-4 py-2 shadow-xl images-shadow"
+                className="flex absolute -top-72 -right-40 md:-top-24 md:-right-96 bg-white px-4 py-2 shadow-xl images-shadow"
                 initial="invisible"
                 animate="visible"
                 exit="invisible"
@@ -93,7 +99,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
                   maxDate={new Date()}
                   minDate={MIN_DATE}
                   onClickDay={handleClickDate}
-                  className="w-72 text-black"
+                  className="w-80 text-black"
                   tileClassName="transition duratin-300 p-1 hover:text-purple-400"
                 />
               </motion.div>
@@ -115,7 +121,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/DarwinLozada/OurUniverse-nasaproject"
-          className="flex flex-col-reverse transition duration-500 md:flex-row items-center hover:text-purple-400"
+          className="flex flex-col-reverse transition duration-400 md:flex-row items-center hover:text-purple-400"
         >
           <GithubShapeIcon />
           <p className="hidden md:inline ml-3">Repository</p>
@@ -134,7 +140,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
             href="https://github.com/DarwinLozada"
           >
             <span
-              className="text-gradient w-full font-bold text-xl"
+              className="text-gradient text-gradient-hover w-full font-bold text-xl"
               style={{
                 backgroundImage: "linear-gradient(190deg, #fc65c4, #546ef7)",
                 WebkitBackgroundClip: "text",
@@ -147,6 +153,42 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           </a>
         </div>
       </div>
+      <style jsx global>
+        {`
+          .react-calendar__tile:hover {
+            background-color: #546ef7;
+            color: white;
+          }
+
+          .react-calendar__month-view__weekdays__weekday abbr {
+            color: #546ef7;
+            font-weight: 600;
+            text-decoration: none;
+          }
+
+          .react-calendar__navigation__arrow {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #453675;
+          }
+
+          .react-calendar__navigation__label {
+            font-weight: 500;
+          }
+
+          .react-calendar__year-view__months__month {
+            margin-bottom: 0.4rem;
+          }
+
+          .react-calendar__navigation {
+            gap: 1rem;
+            margin-bottom: 0.6rem;
+          }
+          .react-calendar__month-view__days__day--neighboringMonth {
+            color: #b0b5d1;
+          }
+        `}
+      </style>
     </footer>
   );
 }

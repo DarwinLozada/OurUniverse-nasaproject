@@ -218,7 +218,7 @@ const SecondImageSection = () => {
           <Link href="/discover">
             <button className="hidden md:block transition duration-500 bg-purple-800 hover:bg-purple-900 focus:outline-none focus:ring-4 ring-bgGradientSecond md:absolute images-opaque-shadow right-0 left-0 bottom-1/2 mx-auto text-white px-2 py-3 md:p-8 rounded hover:bg-opacity-100">
               <p
-                className="text-2xl text-gradient md:text-5xl opacity-100 text-white  font-bold"
+                className="text-2xl text-gradient text-gradient-hover md:text-6xl md:px-8 py-4 opacity-100 text-white font-bold"
                 style={{
                   backgroundImage: "linear-gradient(190deg, #ffffff, #e9aefc)",
                   WebkitBackgroundClip: "text",
@@ -241,9 +241,9 @@ const SecondImageSection = () => {
           </p>
         </div>
         <Link href="/discover">
-          <button className="transition duration-500 md:hidden w-full focus:outline-none focus:ring-4 ring-bgGradientSecond bg-purple-800 hover:bg-purple-900 text-white text-3xl font-semibold rounded py-8 images-shadow">
+          <button className="transition duration-500 md:hidden w-full focus:outline-none focus:ring-4 ring-bgGradientSecond bg-purple-800 hover:bg-purple-900 text-white text-3xl font-semibold rounded py-12 images-shadow">
             <p
-              className="text-4xl font-bold text-gradient md:text-5xl opacity-100 text-white"
+              className="text-5xl font-bold text-gradient text-gradient-hover opacity-100 text-white"
               style={{
                 backgroundImage: "linear-gradient(190deg, #ffffff, #e9aefc)",
                 WebkitBackgroundClip: "text",

@@ -11,7 +11,11 @@ const wrapperVariants = {
   },
 };
 
-export default function ImageModal({ src, setShowImageModal }) {
+export default function Modal({
+  children,
+  toggleModal,
+  closeModalClickingOutside,
+}) {
   return ReactDOM.createPortal(
     <motion.div
       initial="invisible"
@@ -20,15 +24,15 @@ export default function ImageModal({ src, setShowImageModal }) {
       variants={wrapperVariants}
       className="justify-center flex items-center fixed w-screen h-screen z-10"
     >
-      <img
-        src={src}
-        className="absolute opacity-100 z-20 max-w-md max-h-96 md:max-h-36rem md:max-w-6xl xl:max-h-40rem xl:max-w-6xl images-opaque-shadow"
-      />
+      {children}
+
       <div
-        className="absolute bg-black w-full h-full opacity-60"
-        onClick={() => setShowImageModal(false)}
+        className="absolute bg-black w-full h-full opacity-80"
+        onClick={() => {
+          if (closeModalClickingOutside) toggleModal(false);
+        }}
       ></div>
     </motion.div>,
-    document.getElementById("image-wrapper-modal")
+    document.getElementById("modal")
   );
 }
