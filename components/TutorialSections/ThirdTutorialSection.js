@@ -17,11 +17,11 @@ export default function ThirdTutorialSection({ setTutorialSection }) {
           layout="intrinsic"
           src={"/static/images/LandingImage1.jpg"}
         />
-        <CursorIcon classNames="absolute text-white transform -rotate-90 -bottom-12 right-0 w-20" />
+        <CursorIcon classNames="absolute text-white transform -rotate-90 -bottom-8 right-0 w-20" />
       </div>
       <button
         onClick={() => setTutorialSection("fourth")}
-        className="transition-colors duration-300 group flex bg-indigo-500 focus:outline-none focus:ring-4 ring-indigo-400 items-center text-3xl px-4 py-2 rounded-md text-white hover:text-purple-200 mt-36 md:mt-24 hover:bg-indigo-700"
+        className="transition-colors duration-300 group flex bg-indigo-500 focus:outline-none focus:ring-4 ring-indigo-400 items-center text-3xl px-4 py-2 rounded-md text-white hover:text-purple-200 mt-36 md:mt-16 hover:bg-indigo-700"
       >
         <p className="text-white text-3xl">Next</p>
         <ArrowIcon classNames="transition-all ml-4 duration-300 w-8 stroke-current group-hover" />
