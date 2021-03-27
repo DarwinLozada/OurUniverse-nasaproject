@@ -75,7 +75,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
           <AnimatePresence>
             {showCalendar && (
               <motion.div
-                className="flex absolute -top-72 -right-40 md:-top-24 md:-right-96 bg-white px-4 py-2 shadow-xl images-shadow"
+                className="flex absolute -top-72 -right-32 sm:-right-40 md:-top-24 md:-right-96 bg-white px-4 py-2 shadow-xl images-shadow"
                 initial="invisible"
                 animate="visible"
                 exit="invisible"
@@ -94,7 +94,7 @@ export default function ActionsBar({ date, setDate, setIsFetching }) {
                   maxDate={new Date()}
                   minDate={MIN_DATE}
                   onClickDay={() => setShowCalendar(false)}
-                  className="w-80 text-black"
+                  className="w-64 sm:w-80 text-black"
                   tileClassName="transition duratin-300 p-1 hover:text-purple-400"
                 />
               </motion.div>
