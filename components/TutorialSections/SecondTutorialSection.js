@@ -4,22 +4,22 @@ import Calendar from "react-calendar";
 export default function SecondTutorialSection({ setTutorialSection }) {
   return (
     <>
-      <h2 className="text-2xl text-center images-opaque-shadow text-purple-300">
+      <h2 className="text-xl sm:text-2xl text-center images-opaque-shadow text-purple-300">
         The first post you will see is going to be the last one published by the
         NASA
       </h2>
-      <h3 className="text-white text-xl text-center mt-8 images-opaque-shadow">
+      <h3 className="text-white text-md sm:text-xl text-center mt-8 images-opaque-shadow">
         In order to see the other ones you will have to use the calendar:
       </h3>
       <div className="flex justify-center text-white stroke-current my-8 images-opaque-shadow">
-        <CalendarIcon classNames="transition duration-300 w-16 h-16 text-purple-200 hover:text-purple-400 images-opaque-shadow" />
+        <CalendarIcon classNames="transition duration-300 w-12 h-12 sm:w-16 sm:h-16 mt-4 text-purple-200 hover:text-purple-400 images-opaque-shadow" />
       </div>
-      <p className="text-white text-xl text-center mt-8 images-opaque-shadow">
+      <p className="text-white text-xl sm:text-2xl text-center sm:mt-12 images-opaque-shadow">
         Choose any day and see the post of that date
       </p>
-      <p className="text-md text-white text-left mt-10 images-opaque-shadow">
+      <p className="hidden sm:inline text-md sm:text-xl text-white text-left mt-10 images-opaque-shadow">
         Note:{" "}
-        <span className="text-gray-200 images-opaque-shadow">
+        <span className="hidden sm:inline text-lg text-gray-200 images-opaque-shadow">
           The minimun date you can choose is the 2015-01-01 and the max is
           today.
         </span>
