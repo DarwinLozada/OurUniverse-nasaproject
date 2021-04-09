@@ -1,11 +1,5 @@
 import Calendar from "react-calendar";
-import {
-  CalendarIcon,
-  HomeIcon,
-  GithubShapeIcon,
-  CaretArrowIcon,
-  ChevronArrowIcon,
-} from "./SvgComponents";
+import { CalendarIcon, HomeIcon, GithubShapeIcon } from "./SvgComponents";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { useEffect, useState } from "react";
