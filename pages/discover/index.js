@@ -10,7 +10,6 @@ import { AnimatePresence } from "framer-motion";
 export default function Discover() {
   const [apodData, setApodData] = useState(null);
   const [showTutorial, setShowTutorial] = useState(false);
-  //Set the initial state as today date formated in YYYY-MM-DD
   const [date, setDate] = useState();
   const [isFetching, setIsFetching] = useState(true);
 
