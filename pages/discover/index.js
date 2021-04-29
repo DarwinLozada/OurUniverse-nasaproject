@@ -1,7 +1,7 @@
 import ApodInfo from "../../components/ApodInfo/ApodInfo";
 import ActionsBar from "../../components/ActionsBar";
 import { useEffect, useState } from "react";
-import Head from "next/head";
+import Head from "../../components/Head/Head";
 import TutorialModal from "../../components/Modals/TutorialModal";
 //API
 import { fetchCertainDayApod } from "../../services/apod";
@@ -34,17 +34,8 @@ export default function Discover() {
 
   return (
     <>
+      <Head />
       <div id="modal"></div>
-      <Head>
-        <title>Our Universe</title>
-        <meta
-          name="description"
-          content="Explore our amazing universe through
-        the NASA's Astronomic Picture of the Day API"
-        />
-        <meta name="author" content="Darwin Lozada" />
-        <meta name="robots" content="index" />
-      </Head>
       <div className="flex w-full h-full max-w-screen">
         <AnimatePresence>
           {showTutorial && <TutorialModal setShowTutorial={setShowTutorial} />}
