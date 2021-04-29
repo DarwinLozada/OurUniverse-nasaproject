@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Head() {
+export default function SEO() {
   return (
     <Head>
       <meta

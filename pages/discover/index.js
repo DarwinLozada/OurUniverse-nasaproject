@@ -1,7 +1,7 @@
 import ApodInfo from "../../components/ApodInfo/ApodInfo";
 import ActionsBar from "../../components/ActionsBar";
 import { useEffect, useState } from "react";
-import Head from "../../components/Head/Head";
+import SEO from "../../components/SEO/SEO";
 import TutorialModal from "../../components/Modals/TutorialModal";
 //API
 import { fetchCertainDayApod } from "../../services/apod";
@@ -34,7 +34,7 @@ export default function Discover() {
 
   return (
     <>
-      <Head />
+      <SEO />
       <div id="modal"></div>
       <div className="flex w-full h-full max-w-screen">
         <AnimatePresence>

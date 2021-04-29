@@ -8,7 +8,7 @@ import {
   PlanetSvg2,
 } from "../components/SvgComponents";
 
-import Head from "../components/Head/Head";
+import SEO from "../components/SEO/SEO";
 import Footer from "../components/LandingFooter";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <Head />
+      <SEO />
       <div className="flex flex-col text-4xl bg-gradient-to-b min-h-screen from-bgGradientFirst to-bgGradientSecond overflow-hidden">
         <header className="flex w-full justify-between items-center mt-4 z-10">
           <div className="relative w-44 sm:w-1/3 lg:w-72 h-16 md:h-24 ">
